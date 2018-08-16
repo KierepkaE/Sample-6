@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animation 1</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            position: relative;
+        }
+        
+        .bg {
+            background-color: rgb(95, 89, 89);
+            transition: all 1s ease .1s;
+            height: 100vh;
+        }
+        
+        .bg p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            line-height: 100vh;
+            width: 100%;
+            text-align: center;
+            font-size: 55px;
+            font-family: Arial, Helvetica, sans-serif;
+            opacity: 0;
+            text-transform: uppercase;
+            color: white;
+            transition: all 1.1s ease .2s;
+        }
+        
+        div.red,
+        div.blue,
+        div.orange,
+        div.green {
+            position: fixed;
+            border: 3px solid white;
+            display: block;
+            width: 3vh;
+            height: 3vh;
+            margin: 10px;
+            border-radius: 45%;
+            transition: 1s;
+            cursor: pointer;
+            z-index: 1;
+        }
+        
+        div.red {
+            left: 0;
+            top: 0;
+            background-color: red;
+        }
+        
+        div.red:hover~.bg {
+            background-color: red;
+        }
+        
+        div.green:hover~.bg {
+            background-color: green;
+        }
+        
+        div.blue:hover~.bg {
+            background-color: blue;
+        }
+        
+        div.orange:hover~.bg {
+            background-color: orange;
+        }
+        
+        div.red:hover~.bg p:nth-child(1) {
+            opacity: 1;
+        }
+        
+        div.green:hover~.bg p:nth-child(2) {
+            opacity: 1;
+        }
+        
+        div.blue:hover~.bg p:nth-child(3) {
+            opacity: 1;
+        }
+        
+        div.orange:hover~.bg p:nth-child(4) {
+            opacity: 1;
+        }
+        
+        div.green {
+            left: 0;
+            bottom: 0;
+            background-color: green;
+        }
+        
+        div.blue {
+            right: 0;
+            top: 0;
+            background-color: blue;
+        }
+        
+        div.orange {
+            right: 0;
+            bottom: 0;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red circle"></div>
+    <div class="green circle"></div>
+    <div class="blue circle"></div>
+    <div class="orange circle"></div>
+    <div class="bg">
+        <p class="red">red</p>
+        <p class="green">green</p>
+        <p class="blue">blue</p>
+        <p class="orange">orange</p>
+    </div>
+</body>
+
+</html>
